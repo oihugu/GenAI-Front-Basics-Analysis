@@ -1,3 +1,6 @@
+from langchain.callbacks.base import BaseCallbackHandler
+from utils.agent import create_agent
+from utils import MyCustomHandler
 import streamlit as st
 
 if __name__ == '__main__':
@@ -11,6 +14,7 @@ if __name__ == '__main__':
     """)
 
     chat_container = st.container()
+    agent = create_agent()
 
     user_prompt = st.chat_input(placeholder="Type a message...")
     if user_prompt:
@@ -18,4 +22,8 @@ if __name__ == '__main__':
             st.write(user_prompt)
 
         with chat_container.chat_message(name="ai"):
-            st.write("I'm still learning, please try again later")
+            handler = MyCustomHandler(BaseCallbackHandler, st)
+            agent.run(user_prompt,
+                      callbacks=[handler])
+
+    print(agent.agent.llm_chain)

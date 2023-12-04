@@ -1,0 +1,14 @@
+Nome,Tipo,Categoria,Valor,Franquia de Dados,WhatsApp,Ligacoes e SMS,Bonus Portabilidade em dados,Roaming Internacional em Dados,Perfil,Serviço de Valor Agregado
+Plano 1,Pós-Pago,Individual,90,50,Ilimitado,Ilimitado,10,0,Custo versus Benefício,Nenhum
+Plano 2 - Variação 1,Pós-Pago,Individual,110,70,Ilimitado,Ilimitado,15,0,"TV, Novela, Filmes e Series",Globoplay
+Plano 2 - Variação 2,Pós-Pago,Individual,110,70,Ilimitado,Ilimitado,15,0,Musica,Spotify
+Plano 2 - Variação 3,Pós-Pago,Individual,110,70,Ilimitado,Ilimitado,15,0,Filmes e Séries,Netflix
+Plano 2 - Variação 4,Pós-Pago,Individual,110,70,Ilimitado,Ilimitado,15,0,Futebol,Premier
+Plano 3 - Variação 1,Pós-Pago,Individual,120,90,Ilimitado,Ilimitado,20,1,"TV, Novela, Filmes e Series",Globoplay
+Plano 3 - Variação 2,Pós-Pago,Individual,120,90,Ilimitado,Ilimitado,20,1,Musica,Spotify
+Plano 3 - Variação 3,Pós-Pago,Individual,120,90,Ilimitado,Ilimitado,20,1,Filmes e Séries,Netflix
+Plano 3 - Variação 4,Pós-Pago,Individual,120,90,Ilimitado,Ilimitado,20,1,Futebol,Premier
+Plano 4 - Variação 1,Pós-Pago,Individual,150,100,Ilimitado,Ilimitado,25,1,Futebol e Musica,Premier e Spotify
+Plano 4 - Variação 2,Pós-Pago,Individual,150,100,Ilimitado,Ilimitado,25,1,"Filmes,  Séries e Musica",Netflix e Spotify
+Plano 4 - Variação 3,Pós-Pago,Individual,150,100,Ilimitado,Ilimitado,25,1,"Futebol , Filmes e Series",Premier e Netflix
+Plano 4 - Variação 4,Pós-Pago,Individual,150,100,Ilimitado,Ilimitado,25,1,"TV, Novela, Filmes, Series e Musica",Globoplay e Spotify
