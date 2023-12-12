@@ -1,3 +1,4 @@
+import os
 from os import environ
 from typing import List
 from langchain import HuggingFaceHub, PromptTemplate
@@ -25,7 +26,7 @@ class LLM:
 
     def init_conversation_retrieval_chain(self, data: List[Document]) -> ConversationalRetrievalChain:
         embeddings = HuggingFaceHubEmbeddings(
-            huggingfacehub_api_token=self.huggingface_api_token)
+            huggingfacehub_api_token=os.environ["HUGGINGFACE"])
         vectorstore = FAISS.from_documents(data, embeddings)
         print(f'vector_store: {vectorstore}')
 
@@ -63,7 +64,7 @@ class LLM:
     def init_conversation_chain(self) -> ConversationChain:
         chain = ConversationChain(llm=self.llm,
                                   verbose=True,
-                                #   memory=self.conversation_memory
+                                  memory=self.conversation_memory
                                   )
         print(f'conversation_chain: {chain}')
         return chain
