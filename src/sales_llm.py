@@ -1,9 +1,9 @@
 import os
-from os import environ
 from typing import List
 from langchain import HuggingFaceHub, PromptTemplate
 from langchain.chains import ConversationalRetrievalChain, ConversationChain
 from langchain.vectorstores import FAISS
+from langchain.embeddings import VertexAIEmbeddings
 from langchain.embeddings.huggingface_hub import HuggingFaceHubEmbeddings
 from langchain.chat_models import ChatVertexAI
 from langchain.docstore.document import Document
@@ -21,12 +21,13 @@ class LLM:
     def __init__(self) -> None:
         self.llm = ChatVertexAI(model_name="chat-bison-32k")
         self.conversation_memory = ConversationBufferMemory(return_messages=True,
-                                                            memory_key='chat_history', 
+                                                            memory_key='history', 
                                                             input_key='question')
 
     def init_conversation_retrieval_chain(self, data: List[Document]) -> ConversationalRetrievalChain:
-        embeddings = HuggingFaceHubEmbeddings(
-            huggingfacehub_api_token=os.environ["HUGGINGFACE"])
+        embeddings = VertexAIEmbeddings(
+            model_name="textembedding-gecko-multilingual@latest"
+        )
         vectorstore = FAISS.from_documents(data, embeddings)
         print(f'vector_store: {vectorstore}')
 

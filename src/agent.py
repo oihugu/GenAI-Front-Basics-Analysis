@@ -2,29 +2,29 @@
 
 # LangChain
 from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
-from langchain.document_transformers import BeautifulSoupTransformer
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.utilities.requests import TextRequestsWrapper
-from langchain.document_loaders import AsyncChromiumLoader
+#from langchain.document_transformers import BeautifulSoupTransformer
+#from langchain.text_splitter import RecursiveCharacterTextSplitter
+#from langchain.utilities.requests import TextRequestsWrapper
+#from langchain.document_loaders import AsyncChromiumLoader
 from langchain.utilities import GoogleSerperAPIWrapper
-from langchain.embeddings import GooglePalmEmbeddings
-from langchain.agents import initialize_agent
+#from langchain.embeddings import GooglePalmEmbeddings
+#from langchain.agents import initialize_agent
 from langchain.agents import load_tools
 from langchain.agents import Tool
-from langchain.llms import GooglePalm
+#from langchain.llms import GooglePalm
 from langchain.chat_models import ChatVertexAI
 
 #Other
 from google.oauth2 import service_account
 from google.cloud import aiplatform
-from urllib.parse import quote
-from bs4 import BeautifulSoup
+#from urllib.parse import quote
+#from bs4 import BeautifulSoup
 import pandas as pd
-import lyricsgenius
-import requests
+#import lyricsgenius
+#import requests
 import json
 import os
-import re
+#import re
 
 with open("keys.json", "r") as api_keys_f: 
   api_keys = json.loads(api_keys_f.read())
@@ -34,9 +34,8 @@ with open("keys.json", "r") as api_keys_f:
 del api_keys_f, api_keys, key
 
 search = GoogleSerperAPIWrapper()
-genius = lyricsgenius.Genius()
 
-credentials = service_account.Credentials.from_service_account_file("C:\\Users\\Hugo\\Downloads\\exploring-genai-73ed41aa4572.json")
+credentials = service_account.Credentials.from_service_account_file("./exploring-genai-73ed41aa4572.json")
 
 aiplatform.init(project="exploring-genai",
                 credentials=credentials)

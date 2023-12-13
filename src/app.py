@@ -5,14 +5,14 @@ from streamlit_chat import message
 class App():
     def __init__(self) -> None:
         self.chat_context = ""
-        self.dashboard_title = 'Bundle Purchase Helper Bot'
+        self.dashboard_title = 'Planos de Ceular'
         st.title(self.dashboard_title)
 
         if 'generated' not in st.session_state:
-            st.session_state['generated'] = ["Hello ! Ask me anything about anything 🤗"]
+            st.session_state['generated'] = ["Olá, Estou aqui para te ajudar a escolher seu plano de ceular"]
 
         if 'past' not in st.session_state:
-            st.session_state['past'] = ["Hey ! 👋"]
+            st.session_state['past'] = ["Oi! 👋"]
 
         if 'user_input' not in st.session_state:
             st.session_state['user_input'] = ''
@@ -22,19 +22,25 @@ class App():
 
         #container for the chat history
         self.response_container = st.container()
+        
         #container for the user's text input
         self.container = st.container()
 
-    def get_user_input(self) -> str | None:
+    def get_user_input(self):
         with self.container:
             with st.form(key='my_form', clear_on_submit=True):
                 st.text_input('You: ', key='user_input')
-                print(f"input_text: {st.session_state['user_input']}")
                 submit_button = st.form_submit_button(label='Send')
 
                 if submit_button and st.session_state['user_input']:
                     st.session_state.past.append(st.session_state['user_input'])
                     return st.session_state['user_input']
+
+                reset_button = st.form_submit_button(label='Reset')
+
+                if reset_button:
+                    self.reset_chat()
+                    return None
 
     def set_generated_message_state(self, generated_text: str) -> None:
         st.session_state.generated.append(generated_text)
@@ -51,6 +57,9 @@ class App():
         st.session_state.history.append((input, output))
 
     def get_history(self):
-        print(f"history: {st.session_state['history']}")
         return st.session_state['history']
     
+    def reset_chat(self):
+        #Clear cache
+        st.runtime.legacy_caching.clear_cache()
+        st.experimental_rerun()
