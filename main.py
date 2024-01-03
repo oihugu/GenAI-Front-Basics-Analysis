@@ -8,7 +8,24 @@ from src import MyCustomHandler
 from src.sales_llm import LLM
 from src.app import App
 
+
+from google.oauth2 import service_account
+from google.cloud import aiplatform
+import json
+import os
+
 if __name__ == '__main__':
+    with open("keys.json", "r") as api_keys_f: 
+        api_keys = json.loads(api_keys_f.read())
+        for key in api_keys.keys():
+            os.environ[key] = api_keys[key]
+
+    del api_keys_f, api_keys, key
+    credentials = service_account.Credentials.from_service_account_file("C:/Users/Hugo/Documents/GenAI Front Basics Analysis/gkey.json")
+
+    aiplatform.init(project="exploring-genai",
+                credentials=credentials)
+
     app = App()
     llm = LLM()
 
@@ -17,7 +34,7 @@ if __name__ == '__main__':
                        csv_args={'delimiter': ','})
     data = loader.load()
 
-    conversation_retrieval_chain = llm.init_conversation_retrieval_chain(data)
+    conversation_retrieval_chain = llm.init_conversation_retrieval_chain(data=data)
     conversation_chain = llm.init_conversation_chain()
 
     input = app.get_user_input()

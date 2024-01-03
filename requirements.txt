@@ -13,10 +13,10 @@ greenlet==3.0.2
 idna==3.6
 jsonpatch==1.33
 jsonpointer==2.4
-langchain==0.0.350
-langchain-community==0.0.2
-langchain-core==0.1.0
-langchain-experimental==0.0.46
+langchain
+langchain-community
+langchain-core
+langchain-experimental
 langsmith==0.0.69
 marshmallow==3.20.1
 multidict==6.0.4
@@ -34,3 +34,4 @@ typing-inspect==0.9.0
 typing_extensions==4.9.0
 urllib3==2.1.0
 yarl==1.9.4
+gkey.json

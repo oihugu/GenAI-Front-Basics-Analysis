@@ -24,20 +24,9 @@ import json
 import os
 import re
 
-with open("keys.json", "r") as api_keys_f: 
-  api_keys = json.loads(api_keys_f.read())
-  for key in api_keys.keys():
-    os.environ[key] = api_keys[key]
-
-del api_keys_f, api_keys, key
-
 search = GoogleSerperAPIWrapper()
 genius = lyricsgenius.Genius()
 
-credentials = service_account.Credentials.from_service_account_file("C:\\Users\\Hugo\\Downloads\\exploring-genai-73ed41aa4572.json")
-
-aiplatform.init(project="exploring-genai",
-                credentials=credentials)
 
 
 serper_tool = Tool(

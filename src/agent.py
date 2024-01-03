@@ -35,7 +35,7 @@ del api_keys_f, api_keys, key
 
 search = GoogleSerperAPIWrapper()
 
-credentials = service_account.Credentials.from_service_account_file("./exploring-genai-73ed41aa4572.json")
+credentials = service_account.Credentials.from_service_account_file("./gkey.json")
 
 aiplatform.init(project="exploring-genai",
                 credentials=credentials)

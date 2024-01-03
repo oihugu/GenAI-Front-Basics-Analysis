@@ -12,7 +12,7 @@ class App():
             st.session_state['generated'] = ["Olá, Estou aqui para te ajudar a escolher seu plano de ceular"]
 
         if 'past' not in st.session_state:
-            st.session_state['past'] = ["Oi! 👋"]
+            st.session_state['past'] = ["Me ajude a escolher o melhor plano para o meu perfil."]
 
         if 'user_input' not in st.session_state:
             st.session_state['user_input'] = ''
@@ -48,10 +48,11 @@ class App():
     def create_chat_component(self) -> None:
         if st.session_state['generated']:
             with self.response_container:
-                for i in range(len(st.session_state['generated'])-1, -1, -1):
-                    message(st.session_state["generated"][i], key=str(i))
+                for i in range(-1, len(st.session_state['generated'])-1, 1):
                     message(st.session_state['past'][i],
                             is_user=True, key=str(i) + '_user')
+                    message(st.session_state["generated"][i], key=str(i))
+                    
                     
     def set_history(self, input: str, output: str) -> None:
         st.session_state.history.append((input, output))
