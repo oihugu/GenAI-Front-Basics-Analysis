@@ -37,10 +37,11 @@ if __name__ == '__main__':
         # print(f'conversation_chain output: {output}')
 
         output = conversation_chain(inputs={"input": input, 
-                                            "history": app.get_history()},
+                                            "chat_history": app.get_history()},
                                             return_only_outputs=True)
 
-        app.set_generated_message_state(output['response'])
-        app.set_history(input, output['response'])
+        print(f'conversation_chain output: {output}')
+        app.set_generated_message_state(output['output'])
+        app.set_history(input, output['output'])
 
     app.create_chat_component()

@@ -10,4 +10,4 @@ Frequência de viagens internacionais: Alta, Média ou Baixa
 Preferência de conteúdo: Filmes, Futebol, TV, Novela ou Música
 
 Com base no histórico de conversa a seguir, extraia as informações necessárias para o vendedor em um JSON
-{history}
+{chat_history}

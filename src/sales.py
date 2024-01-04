@@ -1,10 +1,13 @@
 from typing import List
 
-from langchain.chains import ConversationalRetrievalChain, ConversationChain, LLMChain
+from langchain.agents import AgentType, Tool, initialize_agent
+from langchain_core.output_parsers import StrOutputParser
+from langchain.chains import ConversationChain, LLMChain
 from langchain.memory import ConversationBufferMemory
 from langchain.embeddings import VertexAIEmbeddings
 from langchain.docstore.document import Document
 from langchain.chat_models import ChatVertexAI
+
 
 from langchain.prompts import (
     ChatPromptTemplate,
@@ -22,7 +25,7 @@ class LLM:
     def __init__(self) -> None:
         self.llm = ChatVertexAI(model_name="chat-bison-32k")
         self.conversation_memory = ConversationBufferMemory(return_messages=True,
-                                                            memory_key='history', 
+                                                            memory_key='chat_history', 
                                                             input_key='input') # Uma lista de listas, quando vier do client para a API ele atualiza com o que vem do client, dependete por sessão
 
     def init_conversation_chain(self):
@@ -35,24 +38,30 @@ class LLM:
                     template += main_template.read().replace('--planos_introducao--', sec_template.read())
 
 
-            prompt = ChatPromptTemplate.from_messages([
-                SystemMessagePromptTemplate.from_template(
-                    "Você é um vendedor de planos de celular. A IA é falante e fornece muitos detalhes específicos sobre planos de celular. Se a IA não souber a resposta a uma pergunta, ela diz sinceramente que não sabe."),
-                # Podemos falar o que ele precisa fazer ao longo da conversa
-                HumanMessagePromptTemplate.from_template(template)
-            ])
-
-
 
             # Não passar um conversational chain, usar o exemplo do chat with tools
 
             # Para facilitar o embedding e os planos, podemos criar uma descrição em linguagem natural para cada plano
             # pode deixar mais tranquilo para o cliente
+            tools = []
+
+            return initialize_agent(tools = [],
+                                    llm=self.llm,
+                                    agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
+                                    agent_kwargs={"prefix": template,
+                                                  "memory": self.conversation_memory,
+                                                  "verbose": True}
+                                    )
 
 
-            chain = ConversationChain(memory=self.conversation_memory,
-                                      llm=self.llm,
-                                      prompt=prompt)
+    # LLM Extratora - A parte da sales LLM mas ainda na mesma classe pelo histórico de conversa
+    ## Com base no histórico de conversa, extrai as informações necessárias para o vendedor em um JSON
+    def extract_information(self) -> dict:
+    
+        prompt=ChatPromptTemplate.from_messages([
+                                HumanMessagePromptTemplate.from_template_file('prompts\ExtraçãoDeInformação.txt', input_variables=['chat_history']),
+                                ])
+        
+        llm_lcel = prompt | ChatVertexAI(model_name="chat-bison-32k") | StrOutputParser()
 
-            return chain
-
+        return llm_lcel.invoke({"chat_history": self.conversation_memory})

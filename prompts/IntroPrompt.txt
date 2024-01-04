@@ -14,6 +14,6 @@ Portabilidade: Vai fazer a portabilidade de outra operadora? Sim ou Não
 Frequência de viagens internacionais: Alta, Média ou Baixa
 Preferência de conteúdo: Filmes, Futebol, TV, Novela ou Música
 
-{history}
+{chat_history}
 Human: {input}
 Salesbot:
