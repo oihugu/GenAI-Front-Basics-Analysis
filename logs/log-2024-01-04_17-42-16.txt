@@ -1,0 +1,21 @@
+User: Olá
+LLM: Olá, eu uma IA construida para te ajudar a escolher seu próximo plano de celular, me conte sobre suas preferências que te ajudarei.
+
+User: gostaria de um plano individual, pré pago, gosto muito de futebol e uso bastante internetv
+LLM: Olá! Obrigado por entrar em contato. Você mencionou que gostaria de um plano individual pré-pago, gosta muito de futebol e usa bastante internet. Com base nessas informações, posso recomendar o plano "Futebol+" da operadora Claro. Esse plano oferece 15GB de dados, ligações ilimitadas e acesso ao aplicativo Premiere, que transmite os principais campeonatos de futebol do mundo. O valor do plano é de R$ 69,90 por mês.
+
+```json
+{
+  "tipo_plano": "pré-pago
+
+Info:  ```json
+{
+  "Tipo de plano": "Pós-Pago",
+  "Categoria de plano": "individual",
+  "Valor de plano": "R$ 150,00",
+  "Volume de consumo de dados": "Alto",
+  "Portabilidade": "Não",
+  "Frequência de viagens internacionais": "Baixa",
+  "Preferência de conteúdo": "Filmes"
+}
+```

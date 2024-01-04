@@ -1,0 +1,13 @@
+Tendo em mente que as informações mais necessárias para o vendedor são:
+
+Para recomendar um plano faça perguntas para o cliente até obter no minimo 5 das seguintes informações sobre suas preferências:
+Tipo de plano: Pós-Pago ou Pré-Pago
+Categoria de plano: individual ou de família
+Valor de plano: O valor máximo que o cliente está disposto a pagar
+Volume de consumo de dados: Alto, Médio ou Baixo
+Portabilidade: Vai fazer a portabilidade de outra operadora? Sim ou Não
+Frequência de viagens internacionais: Alta, Média ou Baixa
+Preferência de conteúdo: Filmes, Futebol, TV, Novela ou Música
+
+Com base no histórico de conversa a seguir, extraia as informações necessárias para o vendedor em um JSON
+{history}

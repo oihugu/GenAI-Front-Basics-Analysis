@@ -1,0 +1,106 @@
+{
+    "Plano 1": {
+        "Valor": 90,
+        "Franquia de Dados": 50,
+        "Bonus Portabilidade em dados": 10,
+        "Roaming Internacional em Dados": 0,
+        "Perfil": "Custo versus Benefício",
+        "Serviço de Valor Agregado": "Nenhum"
+    },
+    "Plano 2 - Variação 1": {
+        "Valor": 110,
+        "Franquia de Dados": 70,
+        "Bonus Portabilidade em dados": 15,
+        "Roaming Internacional em Dados": 0,
+        "Perfil": "TV, Novela, Filmes e Series",
+        "Serviço de Valor Agregado": "Globoplay"
+    },
+    "Plano 2 - Variação 2": {
+        "Valor": 110,
+        "Franquia de Dados": 70,
+        "Bonus Portabilidade em dados": 15,
+        "Roaming Internacional em Dados": 0,
+        "Perfil": "Musica",
+        "Serviço de Valor Agregado": "Spotify"
+    },
+    "Plano 2 - Variação 3": {
+        "Valor": 110,
+        "Franquia de Dados": 70,
+        "Bonus Portabilidade em dados": 15,
+        "Roaming Internacional em Dados": 0,
+        "Perfil": "Filmes e Séries",
+        "Serviço de Valor Agregado": "Netflix"
+    },
+    "Plano 2 - Variação 4": {
+        "Valor": 110,
+        "Franquia de Dados": 70,
+        "Bonus Portabilidade em dados": 15,
+        "Roaming Internacional em Dados": 0,
+        "Perfil": "Futebol",
+        "Serviço de Valor Agregado": "Premier"
+    },
+    "Plano 3 - Variação 1": {
+        "Valor": 120,
+        "Franquia de Dados": 90,
+        "Bonus Portabilidade em dados": 20,
+        "Roaming Internacional em Dados": 1,
+        "Perfil": "TV, Novela, Filmes e Series",
+        "Serviço de Valor Agregado": "Globoplay"
+    },
+    "Plano 3 - Variação 2": {
+        "Valor": 120,
+        "Franquia de Dados": 90,
+        "Bonus Portabilidade em dados": 20,
+        "Roaming Internacional em Dados": 1,
+        "Perfil": "Musica",
+        "Serviço de Valor Agregado": "Spotify"
+    },
+    "Plano 3 - Variação 3": {
+        "Valor": 120,
+        "Franquia de Dados": 90,
+        "Bonus Portabilidade em dados": 20,
+        "Roaming Internacional em Dados": 1,
+        "Perfil": "Filmes e Séries",
+        "Serviço de Valor Agregado": "Netflix"
+    },
+    "Plano 3 - Variação 4": {
+        "Valor": 120,
+        "Franquia de Dados": 90,
+        "Bonus Portabilidade em dados": 20,
+        "Roaming Internacional em Dados": 1,
+        "Perfil": "Futebol",
+        "Serviço de Valor Agregado": "Premier"
+    },
+    "Plano 4 - Variação 1": {
+        "Valor": 150,
+        "Franquia de Dados": 100,
+        "Bonus Portabilidade em dados": 25,
+        "Roaming Internacional em Dados": 1,
+        "Perfil": "Futebol e Musica",
+        "Serviço de Valor Agregado": "Premier e Spotify"
+    },
+    "Plano 4 - Variação 2": {
+        "Valor": 150,
+        "Franquia de Dados": 100,
+        "Bonus Portabilidade em dados": 25,
+        "Roaming Internacional em Dados": 1,
+        "Perfil": "Filmes,  Séries e Musica",
+        "Serviço de Valor Agregado": "Netflix e Spotify"
+    },
+    "Plano 4 - Variação 3": {
+        "Valor": 150,
+        "Franquia de Dados": 100,
+        "Bonus Portabilidade em dados": 25,
+        "Roaming Internacional em Dados": 1,
+        "Perfil": "Futebol , Filmes e Series",
+        "Serviço de Valor Agregado": "Premier e Netflix"
+    },
+    "Plano 4 - Variação 4": {
+        "Valor": 150,
+        "Franquia de Dados": 100,
+        "Bonus Portabilidade em dados": 25,
+        "Roaming Internacional em Dados": 1,
+        "Perfil": "TV, Novela, Filmes, Series e Musica",
+        "Serviço de Valor Agregado": "Globoplay e Spotify"
+    }
+}
